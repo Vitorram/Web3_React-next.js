@@ -14,17 +14,17 @@ export default function SideBar(){
 
 const styles = {
     sideBar: {
-        backgroundColor: "#caeeacff",
+        backgroundColor: "#f07951",
         height: "100vh", 
         width: 250
     },
     nav: {
     listStyleType: "none",
-    fontSize: 55, 
+    fontSize: 30, 
     color: "#070401ff",
     padding: 40,
     margin: 0,
-
+    fontFamily: "'Roboto', Arial, sans-serif",
     display: "flex",
     flexDirection: "column",
     gap: "20px"   

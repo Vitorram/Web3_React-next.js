@@ -24,11 +24,13 @@ const style = {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
+    padding: "0px",
   },
 
   main:{
     display: "flex",
     flex: 1,
+    gap: "24px",
   },
 
 }

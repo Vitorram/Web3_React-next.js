@@ -19,7 +19,7 @@ export default function Header(){
 
 const styles = {
     container: {
-        backgroundColor: "#000",
+        backgroundColor: "#471754",
         color: "#FFF",
         display: "flex",
         justifyContent: "space-between",
@@ -30,5 +30,6 @@ const styles = {
         display: "flex",
         listStyleType: "none",
         gap: 20,
+        fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     }
 }
