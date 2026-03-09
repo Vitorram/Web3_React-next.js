@@ -2,7 +2,7 @@ import styles2 from "./Header.module.css"
 
 export default function Header(){
     return (
-        <header style={styles.container}>
+        <header className="bg-[#471754] text-white flex justify-between p-5 gap-5 font-sans">
             <h1 className={styles2.logo}>Logo</h1>
             <nav>
                 <ul style={styles.nav}>
@@ -18,14 +18,6 @@ export default function Header(){
 
 
 const styles = {
-    container: {
-        backgroundColor: "#471754",
-        color: "#FFF",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: 20
-    },
     nav: {
         display: "flex",
         listStyleType: "none",

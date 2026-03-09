@@ -2,6 +2,8 @@ import Headers from "@/components/Header"
 import Footer from "@/components/Footer"
 import SideBar from "@/components/SideBar"
 
+import '../app/globals.css'
+
 export default function Home(){
     return (
       <div style={style.page}> 
