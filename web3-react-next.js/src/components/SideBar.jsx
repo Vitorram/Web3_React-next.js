@@ -2,11 +2,8 @@ export default function SideBar(){
     return (
         <div style={styles.sideBar}>
             <ul style={styles.nav}>
-                <li>Config</li>
-                <li>Clientes</li>
-                <li>Lojas</li>
-                <li>Locais</li>
-                <li>Sair</li>
+                <h1 className="text-3xl font-bold">SideBar</h1>
+            <h3 className="text-xl">Esse é o SideBar</h3>
             </ul>
         </div>
     )
@@ -20,7 +17,6 @@ const styles = {
     },
     nav: {
     listStyleType: "none",
-    fontSize: 30, 
     color: "#070401ff",
     padding: 40,
     margin: 0,

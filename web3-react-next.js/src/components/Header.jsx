@@ -1,27 +1,22 @@
-import styles2 from "./Header.module.css"
+import Logo from "@/components/Logo"
+import { AiOutlineAlipay } from "react-icons/ai";
 
 export default function Header(){
     return (
-        <header className="bg-[#471754] text-white flex justify-between p-5 gap-5 font-sans">
-            <h1 className={styles2.logo}>Logo</h1>
+        <header className="bg-[#471754] text-white flex items-center justify-between p-5">
+           
+            <Logo />
+
             <nav>
-                <ul style={styles.nav}>
-                    <li>Home</li>
-                    <li>Sobre</li>
-                    <li>FAQ</li>
-                    <li>Contato</li>
+                <ul className="flex items-center gap-6 text-2xl">
+                    
+                    <li >Home</li>
+                    <li >Sobre</li>
+                    <li >FAQ</li>
+                    <li className="flex gap-1">Contato <AiOutlineAlipay /> </li>
                 </ul>
             </nav>
+
         </header>
     )
-}
-
-
-const styles = {
-    nav: {
-        display: "flex",
-        listStyleType: "none",
-        gap: 20,
-        fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    }
 }
