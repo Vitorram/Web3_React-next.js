@@ -12,7 +12,6 @@ export default function SideBar(){
 const styles = {
     sideBar: {
         backgroundColor: "#f07951",
-        height: "100vh", 
         width: 250
     },
     nav: {
