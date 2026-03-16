@@ -2,9 +2,8 @@ import Logo from "@/components/Logo"
 
 export default function Footer(){
     return (
-        <footer style={styles.footer_container}>
-            <h1>Feito por Vitor esse é o Footer</h1>
-            <h3>Esses manos fizeram o L</h3>
+        <footer className="bg-gray-900 text-white p-5 flex text-center flex-col justify-center items-end ">
+
             <Logo />
         </footer>
     )

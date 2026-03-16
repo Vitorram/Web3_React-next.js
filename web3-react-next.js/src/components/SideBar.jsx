@@ -10,10 +10,12 @@ export default function SideBar(){
 }
 
 const styles = {
-    sideBar: {
-        backgroundColor: "#f07951",
-        width: 250
-    },
+   sideBar: {
+  backgroundColor: "#fff",
+  width: 250,
+  borderRightWidth: 1,
+  borderColor: "#000",
+},
     nav: {
     listStyleType: "none",
     color: "#070401ff",
