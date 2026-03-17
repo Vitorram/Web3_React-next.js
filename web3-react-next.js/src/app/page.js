@@ -5,19 +5,27 @@ import Image from "next/image"
 
 import "../app/globals.css"
 import CardUser from "@/components/CardUser"
+import CardColor from "@/components/ColorComponent"
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Headers />
 
+
+      
+
       <main className="flex flex-1 gap-6 p-6">
+
+
+
         <SideBar />
+
 
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold">Home</h1>
           <h3 className="text-xl">Essa é a nossa home</h3>
-
+           <CardColor />
           <Image
             src="/bot.svg"
             alt="bot"
