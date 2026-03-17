@@ -12,7 +12,7 @@ export default function CardColor() {
         <button 
           className={`px-4 py-1 rounded-full text-xs font-bold transition-all ${isDarkMode ? 'bg-yellow-400 text-black' : 'bg-indigo-900 text-white'}`}
           onClick={() => setIsDarkMode(!isDarkMode)}
-        >
+        >{console.log(isDarkMode)}
           {isDarkMode ? 'MODO CLARO' : 'MODO ESCURO'}
         </button>
       </div>
