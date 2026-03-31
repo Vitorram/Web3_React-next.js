@@ -1,6 +1,6 @@
 export default function CardProduct(props) {
   const { avatar, name, preco, cat } = props;
-
+  
   
 
 

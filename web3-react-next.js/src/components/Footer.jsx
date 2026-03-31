@@ -1,24 +1,15 @@
 import Logo from "@/components/Logo"
 
 export default function Footer(){
-    return (
-        <footer className="bg-gray-900 text-white p-5 flex text-center flex-col justify-center items-end ">
+  return (
+    <footer className="bg-gray-900 text-white py-6 px-4 flex flex-col items-end gap-2">
+      
+      <Logo />
 
-            <Logo />
-        </footer>
-    )
-}
+      <p className="text-sm text-gray-400">
+        © {new Date().getFullYear()} - Todos os direitos reservados
+      </p>
 
-const styles = {
-    footer_container: {
-        backgroundColor: "#f2445e", 
-        color: "#dec87a", 
-        padding: "20px",
-        width: "100%",             
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "end",
-        textAlign: "center"
-    }
+    </footer>
+  )
 }

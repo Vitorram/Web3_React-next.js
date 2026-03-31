@@ -1,83 +1,79 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import Headers from "@/components/Header"
-import Footer from "@/components/Footer"
-import SideBar from "@/components/SideBar"
-import CardUser from "@/components/CardUser"
-import "../app/globals.css"
+import CardUser from "@/components/CardUser";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Sidebar from "@/components/SideBar";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [users, setUsers] = useState([])
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
+
     const getUsers = async () => {
       try {
-        setIsLoading(true)
-
-        const response = await fetch('http://localhost:3333/user')
+        const response = await fetch('http://localhost:3333/user');
 
         if (response.ok) {
-          const data = await response.json()
-          setUsers(data.users || [])
+          const data = await response.json();
+          setUsers(data.users);
         } else {
-          console.log('Erro ao buscar usuários no servidor')
+          const data = await response?.json();
+          console.error('Erro ao buscar usuários', data);
         }
-      } catch (error) {
-        console.log('Erro de conexão com a API:', error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
 
-    getUsers()
-  }, [])
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+      } finally {
+        setIsLoading(false); // ✅ agora no lugar certo
+      }
+    };
+
+    getUsers();
+
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Headers />
+    <div className="flex flex-col min-h-screen">
+      
+      <Header />
 
-      <main className="flex flex-1 gap-6 p-6">
-        <SideBar />
+      <section className="flex flex-1">
+        
+        <Sidebar />
 
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl font-bold">Home</h1>
-          <h3 className="text-xl">Essa é a nossa home</h3>
+        <main className="flex-1 p-6 bg-gray-50">
+          
+          <h1 className="text-2xl font-bold mb-2">Home</h1>
+          <p className="text-gray-600 mb-6">Lista de usuários</p>
 
-          <Image
-            src="/bot.svg"
-            alt="bot"
-            width={200}
-            height={200}
-            priority
-          />
-
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             {isLoading ? (
-              <p className="animate-pulse text-blue-500">
-                Carregando usuários...
-              </p>
-            ) : users.length > 0 ? (
-              users.map((user) => (
-                <CardUser
+              <p className="text-gray-500">Carregando...</p>
+            ) : users.length === 0 ? (
+              <p className="text-gray-500">Nenhum usuário encontrado</p>
+            ) : (
+              users.map(user => (
+                <CardUser 
                   key={user.id}
+                  id={user.id}
+                  avatar={user.avatar}
                   name={user.name}
                   email={user.email}
-                  avatar={user.avatar}
+                  users={users}
+                  setUsers={setUsers}
                 />
               ))
-            ) : (
-              <p className="text-gray-500 italic">
-                Nenhum usuário encontrado.
-              </p>
             )}
           </div>
-        </div>
-      </main>
+
+        </main>
+      </section>
 
       <Footer />
     </div>
-  )
+  );
 }
