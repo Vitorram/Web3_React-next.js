@@ -5,11 +5,15 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Sidebar from "@/components/SideBar";
 import { useEffect, useState } from "react";
+import { useUserStore } from "@/stores/userStrore";
 
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);
-  const [users, setUsers] = useState([]);
+  //const [users, setUsers] = useState([]);
+  //importa o estado global de usuários do Zustand
+  //faz o destructuring para pegar a lista de usuários e a função para atualizar essa lista
+  const {users, setUser } = useUserStore();
 
   useEffect(() => {
 
@@ -19,7 +23,8 @@ export default function Home() {
 
         if (response.ok) {
           const data = await response.json();
-          setUsers(data.users);
+          setUser(data.users);
+          router.push('/') // Redireciona para a home após carregar os usuários
         } else {
           const data = await response?.json();
           console.error('Erro ao buscar usuários', data);
@@ -63,8 +68,6 @@ export default function Home() {
                   avatar={user.avatar}
                   name={user.name}
                   email={user.email}
-                  users={users}
-                  setUsers={setUsers}
                 />
               ))
             )}
